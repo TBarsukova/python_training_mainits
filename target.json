@@ -1,6 +1,6 @@
 {
     "web": {
-        "baseUrl": "http://localhost/mantisbt-1.3.0/"
+        "baseUrl": "http://localhost/mantisbt-1.3.20/"
     },
     "webadmin": {
         "username": "administrator",
