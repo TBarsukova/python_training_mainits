@@ -1,5 +1,6 @@
 from selenium import webdriver
 from fixture.session import SessionHelper
+from .project import ProjectHelper
 
 class Application:
 
@@ -14,6 +15,7 @@ class Application:
             raise ValueError(f"Unrecoginzed browser: {browser}")
         # self.wd.implicitly_wait(5)
         self.session = SessionHelper(self)
+        self.project = ProjectHelper(self)
         self.url = url
 
     def is_valid(self):
@@ -26,10 +28,6 @@ class Application:
     def open_home_page(self):
         wd = self.wd
         wd.get(self.url)
-
-    def return_to_home_page(self):
-        wd = self.wd
-        wd.find_element_by_link_text("home").click()
 
     def destroy(self):
         self.wd.quit()
